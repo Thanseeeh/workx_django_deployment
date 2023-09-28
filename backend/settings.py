@@ -65,14 +65,6 @@ CHANNEL_LAYERS = {
     },
 }
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'datx4b7xy',
-    'API_KEY': '468431289815846',
-    'API_SECRET': '6Nir4f7MbLMuDTb1K1bsk-CkRdA',
-}
-
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -242,3 +234,12 @@ EMAIL_USE_TLS = True
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
 SITE_URL = env('SITE_URL')
+
+# Cloudinary Configuration
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'datx4b7xy',
+    'API_KEY': '468431289815846',
+    'API_SECRET': '6Nir4f7MbLMuDTb1K1bsk-CkRdA',
+}
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
