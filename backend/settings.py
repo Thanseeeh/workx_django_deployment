@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import cloudinary_storage
 import os
 import environ
 
@@ -39,6 +40,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'channels',
+    "cloudinary",
+    "cloudinary_storage",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -61,6 +64,15 @@ CHANNEL_LAYERS = {
         'BACKEND': 'channels.layers.InMemoryChannelLayer',
     },
 }
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'datx4b7xy',
+    'API_KEY': '468431289815846',
+    'API_SECRET': '6Nir4f7MbLMuDTb1K1bsk-CkRdA',
+}
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
