@@ -20,7 +20,6 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # UserProfile
 class UserProfileView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         try:
@@ -50,7 +49,6 @@ class UserProfileView(APIView):
 
 # UserProfileListing
 class UserProfileListView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         profiles = UserProfile.objects.all()
@@ -60,7 +58,6 @@ class UserProfileListView(APIView):
 
 # UserProfileDetails
 class AuthenticatedUserProfile(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         try:

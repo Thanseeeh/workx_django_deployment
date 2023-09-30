@@ -27,7 +27,6 @@ from .serializers import (
 
 
 class FreelancerProfileView(APIView):
-    permission_classes = [IsAuthenticated]
     parser_classes = (MultiPartParser, FormParser)
 
     def get(self, request, *args, **kwargs):
@@ -61,7 +60,6 @@ class FreelancerProfileView(APIView):
         
 
 class FreelancerProfileListView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         profiles = FreelancerProfile.objects.all()
@@ -71,7 +69,6 @@ class FreelancerProfileListView(APIView):
 
 
 class AuthenticatedFreelancerProfile(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         try:
@@ -84,7 +81,6 @@ class AuthenticatedFreelancerProfile(APIView):
 
 
 class AddFreelancerSkill(APIView):
-    permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         serializer = FreelancerSkillSerializer(data=request.data)
@@ -96,7 +92,6 @@ class AddFreelancerSkill(APIView):
 
 
 class FreelancerSkillsList(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         try:
@@ -109,7 +104,6 @@ class FreelancerSkillsList(APIView):
 
 
 class UpdateFreelancerSkill(APIView):
-    permission_classes = [IsAuthenticated]
 
     def delete(self, request, skill_id):
         try:
@@ -124,7 +118,6 @@ class UpdateFreelancerSkill(APIView):
 
 
 class AddFreelancerEducation(APIView):
-    permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         serializer = FreelancerEducationSerializer(data=request.data)
@@ -136,7 +129,6 @@ class AddFreelancerEducation(APIView):
 
 
 class FreelancerEducationList(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         try:
@@ -149,7 +141,6 @@ class FreelancerEducationList(APIView):
 
 
 class UpdateFreelancerEducation(APIView):
-    permission_classes = [IsAuthenticated]
 
     def delete(self, request, education_id):
         try:
@@ -164,7 +155,6 @@ class UpdateFreelancerEducation(APIView):
 
 
 class AddFreelancerExperience(APIView):
-    permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         serializer = FreelancerExperienceSerializer(data=request.data)
@@ -176,7 +166,6 @@ class AddFreelancerExperience(APIView):
 
 
 class FreelancerExperienceList(APIView):
-    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         try:
@@ -189,7 +178,6 @@ class FreelancerExperienceList(APIView):
 
 
 class UpdateFreelancerExperience(APIView):
-    permission_classes = [IsAuthenticated]
 
     def delete(self, request, experience_id):
         try:
@@ -204,7 +192,6 @@ class UpdateFreelancerExperience(APIView):
 
 
 class AddGigs(APIView):
-    permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
 
     def post(self, request, *args, **kwargs):
@@ -242,7 +229,6 @@ class GigsList(APIView):
 
 
 class UpdateGigs(APIView):
-    permission_classes = [IsAuthenticated]
 
     def delete(self, request, gigs_id):
         try:
@@ -257,7 +243,6 @@ class UpdateGigs(APIView):
 
 
 class BlockUnBlockGigsView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def post(self, request, gig_id):
         try:

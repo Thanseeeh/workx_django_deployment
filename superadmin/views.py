@@ -34,7 +34,6 @@ class BlockUnBlockUserView(APIView):
         
 
 class BlockUnBlockFreelancerView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def post(self, request, user_id):
         try:
@@ -63,7 +62,6 @@ class RegisterFreelancerView(APIView):
         
 
 class AddCategoryView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         serializer = CategorySerializer(data=request.data)
@@ -83,7 +81,6 @@ class CategoryView(APIView):
     
 
 class BlockUnBlockCategoryView(APIView):
-    permission_classes = [IsAuthenticated]
 
     def post(self, request, cat_id):
         try:
