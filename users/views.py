@@ -294,8 +294,8 @@ class StripeCheckoutView(APIView):
                     },
                 ],
                 mode='payment',
-                success_url=settings.SITE_URL + '/order-status/?success=true',
-                cancel_url=settings.SITE_URL + '/order-status/?canceled=true',
+                success_url=settings.SITE_URL + f'/orderstatus/{order_id}/',
+                cancel_url=settings.SITE_URL + f'/orderstatus/{order_id}/',
             )
 
             transaction = TransactionHistory.objects.create(
